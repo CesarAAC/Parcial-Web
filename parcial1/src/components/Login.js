@@ -1,31 +1,38 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
+import '../i18n';
 
 const Login = (props) => {
+  const [ t, i18n ] = useTranslation();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState('')
   const [passwordError, setPasswordError] = useState('')
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const onButtonClick = () => {
   setEmailError('')
   setPasswordError('')
   if ('' === email) {
-    setEmailError('Porfavor ingresar mail')
+    setEmailError(t('mailErrorEmpty'))
     return
   }
 
-  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-    setEmailError('Porfavor ingresar mail valido')
+  if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+    setEmailError(t('mailErrorValid'))
     return
   }
 
   if ('' === password) {
-    setPasswordError('Porfavor ingresar contraseña')
+    setPasswordError(t('passwordErrorEmpty'))
     return
   }
 
   if (password.length < 7) {
-    setPasswordError('Porfavor ingresar contraseña con 8 o mas caracteres')
+    setPasswordError(t('passwordErrorValid'))
     return
   }
   }
@@ -39,7 +46,7 @@ const Login = (props) => {
       <div className={'inputContainer'}>
         <input
           value={email}
-          placeholder="Ingrese su mail"
+          placeholder={t("mail")}
           onChange={(ev) => setEmail(ev.target.value)}
           className={'inputBox'}
         />
@@ -49,7 +56,7 @@ const Login = (props) => {
       <div className={'inputContainer'}>
         <input
           value={password}
-          placeholder="Ingrese su contraseña"
+          placeholder={t('password')}
           onChange={(ev) => setPassword(ev.target.value)}
           className={'inputBox'}
         />
@@ -59,6 +66,8 @@ const Login = (props) => {
       <div className={'inputContainer'}>
         <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'} />
       </div>
+      <button onClick={() => changeLanguage('en')}>English</button>
+      <button onClick={() => changeLanguage('es')}>Español</button>
     </div>
   )
 }

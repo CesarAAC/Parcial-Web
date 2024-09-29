@@ -1,0 +1,12 @@
+{
+    "mail": "Enter your email",
+    "mailErrorEmpty": "Please enter your password",
+    "mailErrorValid": "Please enter a valid email",
+    "password": "Enter your password",
+    "passwordErrorEmpty": "Please enter your password",
+    "passwordErrorValid": "Please enter a password with 8 or more characters",
+    
+    "city": "Route by",
+    "distance": "Distance",
+    "time": "Estimated Time"
+  }

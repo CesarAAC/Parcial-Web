@@ -34,4 +34,4 @@ function Sports(props) {
  );
 }
 
-export default Mascotas;
+export default Sports;

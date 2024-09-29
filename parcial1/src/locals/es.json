@@ -1,0 +1,13 @@
+{
+    "mail": "Ingrese su mail",
+    "mailErrorEmpty": "Porfavor ingresar contraseña",
+    "mailErrorValid": "Porfavor ingresar mail valido",
+    "password": "Ingrese su contraseña",
+    "passwordErrorEmpty": "Porfavor ingresar contraseña",
+    "passwordErrorValid": "Porfavor ingresar contraseña con 8 o mas caracteres",
+    
+    "city": "Ruta por",
+    "distance": "Distancia",
+    "time": "Tiempo Estimado"
+
+}

@@ -6,15 +6,14 @@ import Sport from "./components/Sport"
 function App() {
   return (
     <div className="App">
+    <Login></Login>
     <BrowserRouter>
        <Routes>
-         <Route path="/" element={<App />} />
+         <Route path="/app" element={<App />} />
          <Route path="/Sports" element={<Sports />} />
          <Route path="/Sports/:sportId" element={<Sport />} />
        </Routes>
      </BrowserRouter>
-
-      <Login></Login>
     </div>
   );
 }
